@@ -1,4 +1,44 @@
 <hello name="{{ name }}"></hello>
 <p>
   Belajar Angular Pertama
-</p>
+  <br/>
+
+  {{"Contoh Menulis di Angular"}}
+  25 + 25 = {{25+25}}
+
+  <input [(ngModel)] = "a" type="text">*
+  <input [(ngModel)] = "b" type="text">
+  {{a * b}}
+  <br/>
+  </p>
+  <div *ngFor="let buah of itembuah; let i = index">
+  {{i+1}}.{{buah.nama}} - {{buah.harga | currency : 'Rp'}}
+  </div>
+
+  <div *ngFor="let data of itemArr">
+    {{data}}
+  </div>
+
+  <p *ngIf="show">Tampilkan Jika Show = true</p>
+
+  <ng-template *ngIf="show; then showBlock; else notShowBlock">
+    
+  </ng-template>
+
+  <ng-template #showBlock>
+    <p>show when showBlock</p>
+  </ng-template>
+
+  <ng-template #notShowBlock>
+    <p>show when NotShowBlock</p>
+  </ng-template>
+
+  <input [(ngModel)] = user type="text">
+  <p *ngIf="user">halo {{user}}</p>
+
+  <p>
+    <button (click) = "klikButton()">Coba Ditekan</button>
+    {{pesan}}
+  </p>
+
+
